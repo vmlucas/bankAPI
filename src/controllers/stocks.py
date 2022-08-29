@@ -1,6 +1,5 @@
 from flask import Flask,request
 from flask_restx import Api, Resource, reqparse
-from src.model.dataModel import fetchStocks
 from src.server.instance import server
 from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy as sa
