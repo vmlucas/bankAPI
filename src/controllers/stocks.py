@@ -5,8 +5,10 @@ from src.server.instance import server
 from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy as sa
 import os
+import dotenv as dt
 from dotenv import load_dotenv
 
+dt.config({"path": "./vars/.env"})
 load_dotenv()
 
 db_user = os.getenv('db_user')
