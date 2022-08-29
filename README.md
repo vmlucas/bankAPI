@@ -13,6 +13,9 @@ sqlalchemy
 #start the API server
 #run python3 main.py on ./bank_API folder
 #usage 
+#fetch all stocks names
+#http://127.0.0.1:5000/names
+
 #fetch all stock historical data
 #http://127.0.0.1:5000/stocks?stock=AAPL&init=&end=
 #

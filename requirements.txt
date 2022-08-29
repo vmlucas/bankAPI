@@ -5,16 +5,22 @@
 #    pipenv lock --requirements
 #
 python3.10
+python-dotenv
 flask
 flask_restx
 pandas
 json
 psycopg2
 sqlalchemy
-
+    
 #start the API server
 #run python3 main.py on ./bank_API folder
 #usage 
+
+#all stocks names
+#http://127.0.0.1:5000/names
+
+
 #fetch all stock historical data
 #http://127.0.0.1:5000/stocks?stock=AAPL&init=&end=
 #
