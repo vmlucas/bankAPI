@@ -4,7 +4,6 @@ from src.server.instance import server
 from flask_sqlalchemy import SQLAlchemy
 import sqlalchemy as sa
 import os
-#from urllib.parse import quote
 from dotenv import load_dotenv
 import urllib
 
@@ -33,7 +32,7 @@ db = SQLAlchemy(app)
 
 
 class Stock(db.Model):
-    __table_args__ = {"schema": "dbo"} #bank on local postgress
+    __table_args__ = {"schema": "bank"} 
     __tablename__ = 'stocks'
     id =  db.Column(db.INT,primary_key = True)
     stockname = db.Column(db.VARCHAR)
@@ -97,11 +96,7 @@ def getNames():
 def insertStocks():
         stocks = request.get_json()
         stocks_entries = []
-        name = ''
-        cont = 1
-        print('begin insert....')
         for s in stocks["stocks"]:
-            name = s['stockname']
             new_entry = Stock( stockname = s['stockname'],
                            date_value = s['date_value'],
                            open_value = s['open_value'],
@@ -111,7 +106,7 @@ def insertStocks():
                            adj_close_value = s['adj_close_value'],
                            volume = s['volume'] )
             stocks_entries.append(new_entry)
-        print('inserting....')
+
         db.session.add_all(stocks_entries)
         db.session.commit()
    
@@ -126,5 +121,4 @@ def insertStocks():
         for s in q:
           db.session.delete(s)
         db.session.commit()
-        
-        
+        return "stocks Loaded"

@@ -27,7 +27,6 @@ sqlalchemy
 #all stocks names
 #http://127.0.0.1:5000/stocks/names
 
-
 #fetch all stock historical data
 #http://127.0.0.1:5000/stocks/data?stock=AAPL&init=&end=
 #
